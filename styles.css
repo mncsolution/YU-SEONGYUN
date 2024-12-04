@@ -1,0 +1,396 @@
+/* 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* 고정 로고 스타일 */
+.fixed-logos {
+  position: fixed;
+  top: 0; /* 상단에 고정 */
+  left: 0;
+  width: 100%;
+  height: 80px; /* 로고 높이에 맞춘 고정 배경 */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* 로고를 양쪽 구석으로 배치 */
+  align-items: center; /* 세로 정렬 */
+  padding: 0 80px; /* 양쪽 여백 조정 */
+  background-color: transparent; /* 초기에는 투명 배경 */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 부드러운 전환 */
+}
+
+/* 로고 컨테이너 */
+.logo-container {
+  position: relative; /* 전환 애니메이션을 위한 상대 위치 */
+}
+
+/* 로고 스타일 */
+.logo {
+  width: 120px; /* 모바일 화면에 맞게 크기 조정 */
+  height: auto;
+  position: absolute; /* 전환 애니메이션에 필요한 위치 설정 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+  opacity: 1;
+  transition: opacity 0.3s ease; /* 페이드 전환 */
+}
+
+/* 대체 로고 */
+.logo.second {
+  opacity: 0; /* 기본 상태에서 숨김 */
+}
+
+/* 스크롤 시 대체 로고 전환 */
+.fixed-logos.scrolled .logo.first {
+  opacity: 0; /* 기존 로고 숨김 */
+}
+
+.fixed-logos.scrolled .logo.second {
+  opacity: 1; /* 대체 로고 표시 */
+}
+
+
+/* 비디오 섹션 스타일 */
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  pointer-events: none;
+}
+
+/* 아이콘 스타일 */
+.gif-icon, .gif-icon-second {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gif-icon {
+  bottom: 60px;
+  width: 45px;
+}
+
+.gif-icon-second {
+  bottom: 23px;
+  width: 50px;
+}
+
+/* 두 번째 섹션 스타일 */
+.second-section {
+  padding: 40px 20px;
+  color: #000000;
+  text-align: center;
+  background-color: #ffffff;
+  transform: scaleX(0.95);
+}
+
+.second-section h2 {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.second-section h3 {
+  font-size: 14px;
+  font-weight: 300;
+  color: #424242;
+}
+
+/* 세 번째 섹션 스타일 */
+.third-section {
+  position: relative;
+}
+
+.third-section .section-content {
+  text-align: center;
+}
+
+.third-section .section-image {
+  width: 100%;
+  height: auto;
+  transform: scaleX(0.9);
+}
+
+.third-section .button {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.third-section .button img {
+  width: auto;
+  height: 50px; /* 버튼 이미지 크기 설정 */
+}
+
+/* 네 번째 섹션 스타일 */
+.fourth-section {
+  position: relative;
+}
+
+.fourth-section .section-content {
+  position: relative;
+  text-align: center;
+}
+
+.fourth-section .section-image {
+  width: 100%;
+  height: auto;
+  transform: scaleX(0.9);
+}
+
+.fourth-section .button {
+  position: absolute;
+  bottom: 20%; /* 이미지 아래쪽에 위치 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.fourth-section .button img {
+  height: 50px; /* 버튼 크기 */
+  width: auto;
+}
+
+/* 다섯 번째 섹션 스타일 */
+.fifth-section {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.fifth-section .section-content {
+  position: relative;
+  text-align: center;
+}
+
+.fifth-section .section-image {
+  width: 100%;
+  height: auto;
+  transform: scaleX(0.9);
+}
+
+.fifth-section .button {
+  position: absolute;
+  bottom: 20%; /* 이미지 아래쪽에 위치 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.fifth-section .button img {
+  height: 50px; /* 버튼 크기 */
+  width: auto;
+}
+
+
+/* 섹션 이미지 스타일 */
+.section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+/* 푸터 스타일 */
+.footer {
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 13px;
+  text-align: left;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+
+.footer-logo img {
+  width: 130px;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.footer-links a {
+  color: #c1c1c1;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 1px solid #444;
+  margin: 20px 0;
+}
+
+.copyright p {
+  color: #999;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* 초기 상태: 투명하고 아래쪽에 위치 */
+.second-section h2, .second-section h3 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 애니메이션 활성화 상태 */
+.second-section.visible h2, .second-section.visible h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 팝업 스타일 */
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+}
+
+.popup.hidden {
+  display: none; /* hidden 클래스 추가로 숨김 */
+}
+
+.popup-content {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #000000; /* 외곽선 */
+}
+
+.popup-image {
+  width: 100%;
+  display: block;
+  cursor: pointer; /* 이미지를 클릭할 수 있도록 커서 변경 */
+}
+
+.popup-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.popup-footer label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#closePopup, #closePopup2 {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* 두 번째 팝업 */
+#popup2 {
+  position: fixed;
+  top: 100%; /* 첫 번째 팝업이 끝나고 바로 아래로 위치 */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* 두 번째 팝업은 첫 번째 팝업 아래에 위치 */
+  visibility: hidden; /* 기본적으로 보이지 않음 */
+}
+
+
+/* 두 팝업 모두 동일한 콘텐츠 스타일 적용 */
+.popup2-content {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #000000;
+}
+
+/* 두 번째 팝업에서 이미지 클릭 후 새 창 열기 */
+.popup2-image {
+  cursor: pointer;
+}
+
+/* 두 번째 팝업이 보일 때 */
+#popup2.show {
+  top: 0; /* 첫 번째 팝업이 닫히면 두 번째 팝업이 화면 상단으로 이동 */
+  visibility: visible; /* 보이게 */
+}
+
+/* 첫 번째 팝업과 두 번째 팝업의 콘텐츠 스타일은 동일 */
+.popup-content, .popup2-content {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #000000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+

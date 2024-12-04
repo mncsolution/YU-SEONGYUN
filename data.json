@@ -1,0 +1,11 @@
+{
+    "user": {
+      "name": "김하하",
+      "accountNumber": "키움증권 1234-5678",
+      "stockPrice": 65000,
+      "sharesOwned": 3
+    },
+    "cs": {
+      "phone": "010-1234-5678"
+    }
+  }

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="MNC 솔루션"> 
+    <meta property="og:image" content="https://i.ibb.co/mX9X1vh/image.png">
+    <meta property="og:description" content="국내 방산 부품 기술을 선도하는 MNC솔루션. 글로벌 핵심 기술 리더를 향해 나아가고 있는 MNC솔루션의 현장에는 땀방울과 노력이 있습니다.">
+    <link rel="icon" href="images/favicon.ico">
+    <title>증권 어카운트 : MNC 솔루션</title>
+    <link rel="stylesheet" href="account.css">
+  </head>
+  <body>
+    <!-- 고정 로고 -->
+    <div class="fixed-logos">
+      <a href="index.html" class="logo-container">
+        <img src="images/logo.webp" alt="왼쪽 로고" class="logo left first">
+        <img src="images/logo_on.webp" alt="왼쪽 대체 로고" class="logo left second">
+      </a>
+      <div class="logo-container">
+        <img src="images/lang.webp" alt="오른쪽 로고" class="logo right first">
+        <img src="images/lang_on.webp" alt="오른쪽 대체 로고" class="logo right second">
+      </div>
+    </div>
+
+    <section class="third-section">
+      <div class="section-content">
+        <img src="images/stock.webp" alt="법적고지 섹션 사진" class="section-image">
+      </div>
+    </section>
+
+    <!-- 네 번째 섹션 -->
+    <section class="fourth-section">
+      <div class="section-content">
+        <img src="images/account_1.webp" alt="섹션 이미지" class="section-image">
+        <h1 class="section-title">MNC 솔루션 보유내역</h1>
+        <p class="section-subtitle">하단에 기재된 내용을 확인하여 주시기 바랍니다.</p>
+      </div>
+    </section>
+
+<!-- 다섯 번째 섹션 -->
+<section class="fifth-section hidden">
+    <div class="box">
+        <p class="box-text">주주 정보</p>
+        <div class="dot"></div> <!-- 아래에 동그라미 추가 -->
+    </div>
+    <div class="line"></div> <!-- 선 추가 -->
+    <div class="box-container"> <!-- 세로로 정렬된 네모칸들 -->
+        <div class="gray-box">
+            <span class="box-title">성함</span><br>
+            <span class="box-content" id="name">불러오는 중...</span>
+            <img src="images/icon_1.webp" class="icon"> <!-- 아이콘 추가 -->
+        </div>
+        <div class="gray-box">
+            <span class="box-title">증권계좌</span><br>
+            <span class="box-content" id="account-number">불러오는 중...</span>
+            <img src="images/icon_2.webp" class="icon"> <!-- 아이콘 추가 -->
+        </div>
+        <div class="gray-box">
+            <span class="box-title">발행종류</span><br>
+            <span class="box-content">보통주</span>
+            <img src="images/icon_4.webp" class="icon"> <!-- 아이콘 추가 -->
+        </div>
+    </div>
+</section>
+
+<!-- 여섯 번째 섹션 -->
+<section class="fifth-section hidden">
+    <div class="box">
+        <p class="box-text">증권 정보</p>
+        <div class="dot"></div> <!-- 아래에 동그라미 추가 -->
+    </div>
+    <div class="line"></div> <!-- 선 추가 -->
+    <div class="box-container"> <!-- 세로로 정렬된 네모칸들 -->
+        <div class="gray-box">
+            <span class="box-title">보유주수</span><br>
+            <span class="box-content" id="shares-owned">불러오는 중...</span>
+            <img src="images/icon_3.webp" class="icon"> <!-- 아이콘 추가 -->
+        </div>
+        <div class="line"></div> <!-- 선 추가 -->
+        <div class="red-box">
+            <span class="redbox-title" id="redbox-title">총 평가금액</span><br>
+            <span class="redbox-content" id="evaluation-amount">불러오는 중...</span>
+        </div>
+    </div>
+</section>
+
+<section class="third-section" id="call-section">
+    <div class="section-content">
+        <img src="images/cs.webp" alt="고객지원 이미지" class="section-image">
+        <div class="overlay">
+            <h2>문의하기</h2>
+            <p>MCN 솔루션에 대해<br>궁금한 점이 있으신가요?</p>
+            <!-- 전화 아이콘을 이 곳에 추가 -->
+            <div class="call-icon" id="call-icon">
+                <img src="images/arr-right.webp" alt="전화 아이콘">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- 푸터 섹션 -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="images/logo_g.webp" alt="로고">
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="legal-notice.html">법적고지</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="term-service.html">이용약관</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+      <hr>
+      <div class="copyright">
+        <p>&copy; 2024 MNC 솔루션.</p>
+      </div>
+    </footer>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const fixedLogos = document.querySelector(".fixed-logos");
+    const leftLogo = document.querySelector(".logo.left");
+    const rightLogo = document.querySelector(".logo.right");
+
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+
+        if (scrollY > 50) {
+            fixedLogos.style.backgroundColor = "rgba(255, 255, 255, 1)";
+            fixedLogos.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+            leftLogo.src = "images/logo_on.webp";
+            rightLogo.src = "images/lang_on.webp";
+        } else {
+            fixedLogos.style.backgroundColor = "transparent";
+            fixedLogos.style.boxShadow = "none";
+            leftLogo.src = "images/logo.webp";
+            rightLogo.src = "images/lang.webp";
+        }
+    });
+
+    // 날짜 관련 코드
+    const today = new Date(); // 현재 날짜
+    const dateString = today.toLocaleDateString("ko-KR"); // 한국 형식으로 날짜 포맷 (예: 2024. 12. 3.)
+    
+    // 날짜를 표시할 p 요소 찾기
+    const subtitle = document.querySelector('.section-subtitle');
+    
+    // (기준날짜:) 부분에 날짜 추가
+    subtitle.innerHTML = `하단에 기재된 내용을 확인하여 주시기 바랍니다.<br>(최근 확인 기록: ${dateString})`;
+});
+
+window.onload = function() {
+    // fetch를 사용하여 data.json 파일을 가져옴
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            const nameElement = document.getElementById("name");
+            const accountNumberElement = document.getElementById("account-number");
+            const sharesOwnedElement = document.getElementById("shares-owned"); // 보유주수 요소 추가
+            const redboxTitleElement = document.getElementById("redbox-title"); // redbox-title 요소 추가
+            const evaluationAmountElement = document.getElementById("evaluation-amount"); // 평가금액 요소 추가
+
+            // JSON 데이터에서 값 추출하여 HTML에 삽입
+            if (nameElement) {
+                nameElement.textContent = data.user.name;
+            }
+            if (accountNumberElement) {
+                accountNumberElement.textContent = data.user.accountNumber;
+            }
+            if (sharesOwnedElement) {
+                sharesOwnedElement.textContent = data.user.sharesOwned + '주'; // '주' 추가
+            }
+
+            // 이름을 포함하여 평가금액 제목 업데이트
+            if (redboxTitleElement) {
+                redboxTitleElement.textContent = `${data.user.name}님의 평가금액`;
+            }
+
+            // 평가금액 계산 및 표시 (예: 주식 가격 * 보유 주수)
+            if (evaluationAmountElement) {
+                const evaluationAmount = data.user.sharesOwned * data.user.stockPrice; // 평가금액 계산
+                evaluationAmountElement.textContent = `${evaluationAmount.toLocaleString()} 원`; // 한국화폐 형식으로 표시
+            }
+
+            // 전화 걸기 섹션 클릭 시 전화 걸기
+            const callSection = document.getElementById("call-section");
+            if (callSection && data.cs && data.cs.phone) {
+                callSection.addEventListener("click", () => {
+                    window.location.href = `tel:${data.cs.phone}`;
+                });
+            }
+            
+            // 전화 아이콘 클릭 시 전화 걸기
+            const callIcon = document.getElementById("call-icon");
+            if (callIcon && data.cs && data.cs.phone) {
+                callIcon.addEventListener("click", () => {
+                    window.location.href = `tel:${data.cs.phone}`;
+                });
+            }
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hiddenSections = document.querySelectorAll(".fifth-section.hidden");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio > 0.65) { // 섹션이 절반 이상 보일 때만 실행
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // 다시 관찰하지 않음
+            }
+        });
+    }, { threshold: 0.65 }); // 임계값 설정
+
+    hiddenSections.forEach(section => observer.observe(section));
+});
+
+
+
+    </script>
+    
+  </body>
+</html>

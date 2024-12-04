@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="MNC 솔루션"> 
+    <meta property="og:image" content="https://i.ibb.co/mX9X1vh/image.png">
+    <meta property="og:description" content="국내 방산 부품 기술을 선도하는 MNC솔루션. 글로벌 핵심 기술 리더를 향해 나아가고 있는 MNC솔루션의 현장에는 땀방울과 노력이 있습니다.">
+    <link rel="icon" href="images/favicon.ico">
+    <title>HOME : MNC 솔루션</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- 고정 로고 -->
+    <div class="fixed-logos">
+      <a href="index.html" class="logo-container">
+        <img src="images/logo.webp" alt="왼쪽 로고" class="logo left first">
+        <img src="images/logo_on.webp" alt="왼쪽 대체 로고" class="logo left second">
+      </a>
+      <div class="logo-container">
+        <img src="images/lang.webp" alt="오른쪽 로고" class="logo right first">
+        <img src="images/lang_on.webp" alt="오른쪽 대체 로고" class="logo right second">
+      </div>
+    </div>
+
+    <!-- 첫 번째 섹션 -->
+    <section class="video-section">
+      <video autoplay muted loop playsinline>
+        <source src="videos/main.mp4" type="video/mp4">
+      </video>
+      <img src="images/mainoverlay.webp" alt="배너 오버레이" class="video-overlay">
+      <img src="images/mouse.gif" alt="마우스 아이콘" class="gif-icon" id="scroll-to-second">
+      <img src="images/arrow.gif" alt="화살표 아이콘" class="gif-icon-second">
+    </section>
+
+    <!-- 두 번째 섹션 -->
+    <section class="second-section">
+      <h2><span id="user-name"></span>님의 보유주수를 확인하세요</h2>
+      <h3>The Best Solution Provider in Motion & Control</h3>
+    </section>
+
+    <!-- 세 번째 섹션 (버튼 포함) -->
+    <section class="third-section">
+      <div class="section-content">
+        <img src="images/photo1.webp" alt="세 번째 섹션 사진" class="section-image">
+        <a href="account.html" class="button">
+          <img src="images/next.webp" alt="계좌 확인 버튼">
+        </a>
+      </div>
+    </section>
+
+<!-- 네 번째 섹션 (버튼 추가) -->
+<section class="fourth-section">
+  <div class="section-content">
+    <img src="images/photo2.webp" alt="네 번째 섹션 사진" class="section-image">
+    <a href="https://online.fliphtml5.com/bdnqc/cach/" class="button" target="_blank">
+      <img src="images/next.webp" alt="계좌 확인 버튼">
+    </a>
+  </div>
+</section>
+
+<!-- 다섯 번째 섹션 (전화 걸기 버튼) -->
+<section class="fifth-section">
+  <div class="section-content">
+    <img src="images/photo3.webp" alt="다섯 번째 섹션 사진" class="section-image">
+    <a href="#" class="button" id="call-button">
+      <img src="images/next.webp" alt="전화 걸기 버튼">
+    </a>
+  </div>
+</section>
+
+<!-- 첫 번째 팝업창 -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <img src="images/popup.webp" alt="Popup Image" class="popup-image">
+    <div class="popup-footer">
+      <label>
+        <input type="checkbox" id="dontShowToday">
+        오늘 하루는 이 창을 띄우지 않기
+      </label>
+      <button id="closePopup">X</button>
+    </div>
+  </div>
+</div>
+
+<!-- 두 번째 팝업창 (두 번째 팝업) -->
+<div id="popup2" class="popup">
+  <div class="popup-content">
+    <img src="images/popup2.webp" alt="Popup Image" class="popup-image" id="popupImage2">
+    <div class="popup-footer">
+      <label>
+        <input type="checkbox" id="dontShowToday2">
+        오늘 하루는 이 창을 띄우지 않기
+      </label>
+      <button id="closePopup2">X</button>
+    </div>
+  </div>
+</div>
+
+    <!-- 푸터 섹션 -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="images/logo_g.webp" alt="로고">
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="legal-notice.html">법적고지</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="term-service.html">이용약관</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="privacy.html">개인정보처리방침</a>
+      </div>
+      <hr>
+      <div class="copyright">
+        <p>&copy; 2024 MNC 솔루션.</p>
+      </div>
+    </footer>
+
+    <script>
+      // JSON 데이터 로드
+      fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+          const userName = data.user.name;
+          document.getElementById('user-name').textContent = userName;
+    
+          const phoneNumber = data.cs.phone;
+          document.getElementById('call-button').setAttribute('href', `tel:${phoneNumber}`);
+        })
+        .catch(error => console.error('Error loading data.json:', error));
+    
+      // 마우스 아이콘 클릭 시 부드러운 스크롤
+      document.getElementById('scroll-to-second').addEventListener('click', () => {
+        const targetSection = document.querySelector('.second-section');
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // Intersection Observer로 애니메이션 활성화
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible'); // 'visible' 클래스 추가
+    }
+  });
+}, { threshold: 0.85 }); // 섹션이 50% 화면에 보일 때 트리거
+
+// 두 번째 섹션 감지
+const secondSection = document.querySelector('.second-section');
+observer.observe(secondSection);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fixedLogos = document.querySelector(".fixed-logos");
+  const leftLogo = document.querySelector(".logo.left");
+  const rightLogo = document.querySelector(".logo.right");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 50) {
+      fixedLogos.style.backgroundColor = "rgba(255, 255, 255, 1)";
+      fixedLogos.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+      leftLogo.src = "images/logo_on.webp";
+      rightLogo.src = "images/lang_on.webp";
+    } else {
+      fixedLogos.style.backgroundColor = "transparent";
+      fixedLogos.style.boxShadow = "none";
+      leftLogo.src = "images/logo.webp";
+      rightLogo.src = "images/lang.webp";
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 첫 번째 팝업
+    const popup = document.getElementById("popup");
+    const closePopup = document.getElementById("closePopup");
+    const dontShowToday = document.getElementById("dontShowToday");
+
+    const popupStatus = localStorage.getItem("popupClosedToday");
+
+    if (popupStatus === "true") {
+        popup.classList.add("hidden"); // 팝업 숨기기
+    } else {
+        popup.classList.remove("hidden"); // 팝업 보이기
+    }
+
+    closePopup.addEventListener("click", () => {
+        if (dontShowToday.checked) {
+            const now = new Date();
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            localStorage.setItem("popupClosedToday", "true");
+        }
+        popup.classList.add("hidden"); // 첫 번째 팝업 닫기
+
+        // 두 번째 팝업 바로 보이게 처리
+        const popup2 = document.getElementById("popup2");
+        popup2.classList.add("show"); // 두 번째 팝업 표시
+    });
+
+    // 두 번째 팝업
+    const popup2 = document.getElementById("popup2");
+    const closePopup2 = document.getElementById("closePopup2");
+    const dontShowToday2 = document.getElementById("dontShowToday2");
+
+    const popupStatus2 = localStorage.getItem("popupClosedToday2");
+
+    if (popupStatus2 === "true") {
+        popup2.classList.add("hidden"); // 두 번째 팝업 숨기기
+    } else {
+        popup2.classList.remove("hidden"); // 두 번째 팝업 보이기
+    }
+
+    closePopup2.addEventListener("click", () => {
+        if (dontShowToday2.checked) {
+            const now = new Date();
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            localStorage.setItem("popupClosedToday2", "true");
+        }
+        popup2.classList.remove("show"); // 두 번째 팝업 닫기
+    });
+
+    // 두 번째 팝업의 이미지를 클릭했을 때 새 창 열기
+    const popupImage2 = document.getElementById("popupImage2");
+    const linkUrl = "https://www.youtube.com/watch?v=YDgXBrrf19o"; // 새 창으로 열고자 하는 URL을 입력
+
+    popupImage2.addEventListener("click", () => {
+        window.open(linkUrl, "_blank"); // 새 창 열기
+    });
+});
+
+    </script>
+    
+  </body>
+</html>
